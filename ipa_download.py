@@ -47,11 +47,11 @@ def save(url, file_name):
 def main(level, time):
 
     """
-    Arguments:
+    Arguments
         level: level of the test; "fe", "ap", "nw", ...
         time: "am" or "pm"
 
-    Use:
+    Use
         $ python3 ipa_download.py fe am
         Downloads a.m. problems of level fe.
     """
