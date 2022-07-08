@@ -1,7 +1,6 @@
 import os, re, sys
 import requests
 from bs4 import BeautifulSoup
-from path_list import Documents
 
 def fetch_infos(level, time):
 
@@ -47,8 +46,19 @@ def save(url, file_name):
 
 def main(level, time):
 
+    """
+    Arguments:
+        level: level of the test; "fe", "ap", "nw", ...
+        time: "am" or "pm"
+
+    Use:
+        $ python3 ipa_download.py fe am
+        Downloads a.m. problems of level fe.
+    """
+
     file_infos = fetch_infos(level, time)
-    dir_name = Documents + f"/ipa/{level}_{time}"
+    ##### Change this part so that it will be the path of the directory you'd like to save the files to download. #####
+    dir_name = "path/to/the/directory/you/like" + f"/ipa/{level}_{time}"
     if not os.path.exists(dir_name):
         os.makedirs(dir_name)
     for url, file_name in file_infos:
